@@ -21,7 +21,7 @@ const Login = () => {
 						alt="logo"
 					/>
 				</div>
-				<div className="mt-16 mx-30 px-8">
+				<div className="mt-16 mx-32 px-8">
 					<p className="text-black-400 text-base font-normal font-customRoboto pt-3 pb-2">
 						Welcome Back
 					</p>
