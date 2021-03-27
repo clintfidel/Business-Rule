@@ -9,7 +9,7 @@ const Dashboard = ({ location, children }) => {
 
   return (
     <div className="flex flex-col h-screen max-h-screen overflow-y-hidden">
-      <div className="px-16 py-2 flex justify-between items-center">
+      <div className="hidden px-16 py-2 md:flex lg:flex md:justify-between items-center"  id="mobile-menu">
         <img src={Logo} alt="Logo" />
         <div className="flex items-center space-x-10">
           <Dropdown width="lg" />
