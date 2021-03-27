@@ -9,7 +9,7 @@ const AddTasks = ({ location }) => {
         <div className="h-100 w-1/2">
           <div className="mt-20 ml-5 w-11/12 h-3/5 object-center flex justify-center text-center rounded border-dashed border-4 border-red-700" style={{ backgroundColor: 'rgba(196, 196, 196, 0.3 )', borderRadius: '10px' }}>
             <div className="m-auto">
-              <img className="h-24 w-24 m-auto" src={uploadImg} />
+              <img className="h-24 w-24 m-auto" src={uploadImg} alt=''/>
               <input type="file" name="file" id="file" class="inputfile font-normal mt-3" />
               <label className="font-customRoboto font-normal" for="file">Drag to upload or <span className="font-normal cursor-pointer" style={{ color: 'black' }}>browse</span></label>
             </div>

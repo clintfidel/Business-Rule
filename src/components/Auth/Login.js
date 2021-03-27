@@ -67,12 +67,13 @@ const Login = () => {
 										<input type="checkbox" id="remember-me" name="remember me" />
 										<label className="rounded-full text-black-400 ml-4 text-base font-normal font-customRoboto" for="remember-me">Remember me</label>
 									</div>
-									<a
+									<Link
+                    to=''
 										class="inline-block align-baseline text-base font-normal font-customRoboto" style={{ color: '#2C5282' }}
-										href="#"
+										href=""
 									>
 										Forgot Password?
-									</a>
+									</Link>
 								</div>
 								<button className="w-full my-5 py-3 rounded text-white text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#F7951D' }}>
 									Login
