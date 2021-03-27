@@ -17,7 +17,7 @@ const Overview = ({ location }) => {
         <p className="text-inbev-primary-text text-lg mt-5 font-customRoboto">
           BU West Overview
         </p>
-        <div className="grid grid-cols-4 gap-4 mt-6">
+        <div className="block gap-2 md:grid lg:grid md:grid-cols-4 lg:grid-cols-4 md:gap-4 lg:gap-4 mt-6">
           {overviewDataSet.map((data, idx) => (
             <div key={idx}>
               <DataBox
@@ -35,12 +35,12 @@ const Overview = ({ location }) => {
           </p>
           <CustomBarChart data={barChartData} showLegend valueName="sku" barColor="#F7951D" />
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-4">
-          <div className="w-full h-96 rounded-md bg-white border-2 border-inbev-primary-text border-opacity-20">
-            <div className="px-8 py-6 flex items-center justify-between mb-3">
+        <div className="mt-6 block gap-4 md:grid lg:grid md:grid-cols-2 lg:grid-cols-2 md:gap-4 lg:gap-4">
+          <div className="w-full h-full rounded-md bg-white border-2 border-inbev-primary-text border-opacity-20">
+            <div className="block px-4 py-3 md:px-8 lg:px-8 md:py-6 lg:py-6 md:flex lg:flex items-left md:items-center lg:items-center md:justify-between lg:justify-between mb-3">
               <p className="font-customRoboto text-lg font-medium text-inbev-primary-text">Model Accuracy Graph</p>
-              <div className="flex items-center">
-                <span className="font-customRoboto text-base mr-2">Filter by:</span>
+              <div className=" block items-left md:flex lg:flex md:items-center lg:items-center">
+                <span className="font-customRoboto text-base mx-2 md:mr-2 lg:mr-2">Filter by:</span>
                 <Dropdown width="sm" />
               </div>
             </div>
@@ -48,10 +48,24 @@ const Overview = ({ location }) => {
               <CustomBarChart data={modelData} valueName="percentage" barColor="#971B1E" barLabel unit="%" />
             </div>
           </div>
-          <div className="px-8 py-6 w-full h-96 rounded-md bg-white border-2 border-inbev-primary-text border-opacity-20">
+          <div className="px-8 py-10 mt-6 md:mt-0 lg:mt-0 md:py-6 lg:6 w-full h-full rounded-md bg-white border-2 border-inbev-primary-text border-opacity-20">
             <p className="font-customRoboto text-lg font-medium text-inbev-primary-text ">Chart Lines</p>
-            <div className="flex">
+            <div className="block w-full h-full md:h-72 lg:h-72 md:flex lg:flex items-left md:justify-between lg:justify-between">
               <CustomPieChart />
+              <div className='md:mt-12 '>
+                <p className='font-customRoboto mb-4 text-lg font-medium text-inbev-primary-text '>
+                  Model Accuracy 1
+                </p>
+                <p className='font-customRoboto mb-4 text-lg font-medium text-inbev-primary-text '>
+                  Model Accuracy 2
+                </p>
+                <p className='font-customRoboto mb-4 text-lg font-medium text-inbev-primary-text '>
+                  Model Accuracy 3
+                </p>
+                <p className='font-customRoboto mb-4 text-lg font-medium text-inbev-primary-text '>
+                  Model Accuracy 4
+                </p>
+              </div>
             </div>
           </div>
         </div>

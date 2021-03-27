@@ -5,9 +5,9 @@ import uploadImg from '../../assests/images/upload.svg'
 const AddTasks = ({ location }) => {
   return (
     <Dashboard location={location}>
-      <div className="px-10 p-6 flex h-screen">
-        <div className="h-100 w-1/2">
-          <div className="mt-20 ml-5 w-11/12 h-3/5 object-center flex justify-center text-center rounded border-dashed border-4 border-red-700" style={{ backgroundColor: 'rgba(196, 196, 196, 0.3 )', borderRadius: '10px' }}>
+      <div className="block px-5 py-3 md:px-10 lg:px-10 md:py-6 lg:py-6 md:flex lg:flex h-screen">
+        <div className="h-80 w-full md:h-full lg:h-full md:w-1/2 lg:w-1/2">
+          <div className="h-full mt-10 md:mt-20 lg:mt-20 ml-5 w-11/12 md:h-3/5 lg:h-3/5 object-center flex justify-center text-center rounded border-dashed border-4 border-red-700" style={{ backgroundColor: 'rgba(196, 196, 196, 0.3 )', borderRadius: '10px' }}>
             <div className="m-auto">
               <img className="h-24 w-24 m-auto" src={uploadImg} alt=''/>
               <input type="file" name="file" id="file" class="inputfile font-normal mt-3" />
@@ -15,15 +15,15 @@ const AddTasks = ({ location }) => {
             </div>
           </div>
         </div>
-        <div className="h-100 w-1/2 overflow-y-scroll">
-          <div className="mt-20 mx-15 px-10">
+        <div className="h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll">
+          <div className="my-8 mx-0 px-0 md:mt-20 lg:mt-20 md:mx-10 lg:mx-0 md:px-10 lg:px-10">
             <p
-              className="text-black-400 font-bold pb-5 font-customRoboto"
+              className="mx-5 text-black-400 font-bold pb-5 font-customRoboto"
               style={{ fontSize: "30px" }}
             >
               New Task Upload
 					</p>
-            <div>
+            <div className='mt-4 mx-5 md:mt-16 px-0'>
               <form>
                 <div class="pt-6 pb-8 mb-4 flex flex-col">
                   <div class="mb-4">
@@ -111,11 +111,11 @@ const AddTasks = ({ location }) => {
                       placeholder=""
                     />
                   </div>
-                  <div className="flex justify-between w-full">
-                    <button className="w-1/2 mr-3 my-5 py-3 rounded text-white text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#971B1E' }}>
+                  <div className="block md:flex lg:flex md:justify-between lg:justify-between w-full">
+                    <button className="w-full md:w-1/2 lg:w-1/2 md:mr-3 lg:mr-3 my-5 py-3 rounded text-white text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#971B1E' }}>
                       Upload Task
                   </button>
-                    <button className="w-1/2 ml-3 my-5 py-3 rounded text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#FFFFFF', color: '#971B1E', border: '1px solid #000000' }}>
+                    <button className="w-full md:w-1/2 lg:w-1/2 md:ml-3 lg:ml-3 my-5 py-3 rounded text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#FFFFFF', color: '#971B1E', border: '1px solid #000000' }}>
                       Cancel
                   </button>
                   </div>
