@@ -16,7 +16,7 @@ const AddTasks = ({ location }) => {
           </div>
         </div>
         <div className="h-100 w-1/2 overflow-y-scroll">
-          <div className="mt-20 mx-20 px-8">
+          <div className="mt-20 mx-15 px-10">
             <p
               className="text-black-400 font-bold pb-5 font-customRoboto"
               style={{ fontSize: "30px" }}
