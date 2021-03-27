@@ -13,7 +13,7 @@ import AddTasks from './components/Dashboard/AddTask';
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
-        {/* <Route path="/" component={Home} exact /> */}
+        <Route path="/" component={Login} exact />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
         <Route path="/dashboard/overview" component={Overview} />
