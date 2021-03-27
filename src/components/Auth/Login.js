@@ -6,22 +6,22 @@ import Logo from "../../assests/images/logo_ab-inbev.jpg";
 const Login = () => {
 	return (
 		<div className="h-screen w-screen flex overflow-hidden">
-			<div className="h-full w-1/2">
+			<div className="hidden md:block h-full w-1/2">
 				<img
 					className="h-full w-full"
 					src={backgroundImage}
 					alt=""
 				/>
 			</div>
-			<div className="h-100 w-1/2 overflow-y-scroll">
-				<div className="flex sm:justify-start justify-end ">
+			<div className="h-100 w-full md:w-1/2 lg:w-1/2 overflow-y-scroll">
+				<div className="flex justify-start">
 					<img
-						className="mx-10 my-8"
+						className="mx-6 md:mx-10 my-8"
 						src={Logo}
 						alt="logo"
 					/>
 				</div>
-				<div className="mt-16 mx-32 px-8">
+				<div className="mt-4 md:mt-16 mx-6 md:mx-32 px-0 md:px-8">
 					<p className="text-black-400 text-base font-normal font-customRoboto pt-3 pb-2">
 						Welcome Back
 					</p>
