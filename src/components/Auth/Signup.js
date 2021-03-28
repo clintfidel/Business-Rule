@@ -14,7 +14,7 @@ const Signup = () => {
 				/>
 			</div>
 			<div className="h-100 w-full md:w-1/2 lg:w-1/2 overflow-y-scroll">
-				<div className="flex justify-start">
+				<div className="flex justify-start md:justify-end lg:justify-end">
 					<img
 						className="mx-6 md:mx-10 my-8"
 						src={Logo}
