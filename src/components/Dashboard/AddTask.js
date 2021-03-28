@@ -14,7 +14,7 @@ const NewTasks = ({ location }) => {
 
   return (
     <Dashboard setTask={''} location={location}>
-      <div className="px-10 pt-10 pb-15 md:pb-30 lg:pb-30">
+      <div className="px-10 pt-10 pb-15 md:pb-36 lg:pb-36">
         <h2 className="font-customRoboto text-inbev-primary-text text-2xl">
           File Upload
         </h2>
