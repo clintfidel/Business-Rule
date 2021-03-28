@@ -1,6 +1,6 @@
 import React from "react";
 
-const Dropdown = ({ width }) => {
+const Dropdown = ({ width, options, changed, page }) => {
   return (
     <div
       className={[
@@ -22,11 +22,13 @@ const Dropdown = ({ width }) => {
           "focus:outline-none",
           "bg-white",
         ].join(" ")}
+        onChange={(e) => changed(e.currentTarget.value ? e.currentTarget.value : '' )}
       >
-        <option selected value="chiller-task">
-          Chiller Task
-        </option>
-        <option value="poster-task">Poster Task</option>
+        {options.map((opt, idx) => (
+          <option key={idx} value={opt.toLowerCase()}>
+            {opt}
+          </option>
+        ))}
       </select>
       {/* <button type="button" className="relative w-full bg-white border border-gray-300 rounded-md py-2 pl-4 pr-10 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-inbev-main" aria-haspopup="listbox" aria-expanded="true">
         <span className="truncate">

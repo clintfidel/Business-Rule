@@ -2,13 +2,13 @@ import React from "react";
 import {
   BarChart,
   Bar,
-  // Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 
 const CustomBarChart = ({
@@ -18,6 +18,8 @@ const CustomBarChart = ({
   barColor,
   barLabel,
   unit,
+  topMargin,
+  customDomain,
 }) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -27,16 +29,16 @@ const CustomBarChart = ({
         // height={300}
         data={data}
         margin={{
-          top: 5,
+          top: topMargin,
           right: 30,
           left: 20,
           bottom: 5,
         }}
-        className="font-customRoboto text-sm overflow-x-scroll"
+        className="font-customRoboto text-sm"
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis axisLine={false} unit={unit} />
+        <YAxis axisLine={false} unit={unit} type="number" domain={customDomain} />
         <Tooltip />
         {showLegend ? (
           <Legend
@@ -53,9 +55,11 @@ const CustomBarChart = ({
           name={valueName}
           fill={barColor}
           legendType="circle"
-          label={barLabel ? { fill: "#fff" } : null}
           unit="%"
-        />
+          minPointSize={6}
+        >
+          {barLabel ? <LabelList dataKey={`value`} position="top" /> : null}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

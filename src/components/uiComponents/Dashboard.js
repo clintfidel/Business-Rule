@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes/siderbarRoutes";
 
-const Dashboard = ({ location, children }) => {
+const Dashboard = ({ location, children, setTask }) => {
   console.log(location);
 
   return (
@@ -12,7 +12,7 @@ const Dashboard = ({ location, children }) => {
       <div className="hidden px-16 py-2 md:flex lg:flex md:justify-between items-center"  id="mobile-menu">
         <img src={Logo} alt="Logo" />
         <div className="flex items-center space-x-10">
-          <Dropdown width="lg" />
+          <Dropdown changed={setTask} width="lg" options={['Chiller Task', 'Poster Task']} />
           <p className="text-lg font-customRoboto">Peru Team</p>
         </div>
       </div>

@@ -1,126 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import Dashboard from "../uiComponents/Dashboard";
-import uploadImg from '../../assests/images/upload.svg'
+import { BsCloudUpload } from "react-icons/bs";
+import InputField from "../uiComponents/InputField";
+import Button from "../uiComponents/Button";
 
-const AddTasks = ({ location }) => {
+const NewTasks = ({ location }) => {
+  const [newTaskData, setNewTaskData] = useState({
+    taskName: "",
+    taskStartDate: "",
+    taskEndDate: "",
+    businessRule: "",
+  });
+
   return (
-    <Dashboard location={location}>
-      <div className="block px-5 py-3 md:px-10 lg:px-10 md:py-6 lg:py-6 md:flex lg:flex h-screen">
-        <div className="h-80 w-full md:h-full lg:h-full md:w-1/2 lg:w-1/2">
-          <div className="h-full mt-10 md:mt-20 lg:mt-20 ml-5 w-11/12 md:h-3/5 lg:h-3/5 object-center flex justify-center text-center rounded border-dashed border-4 border-red-700" style={{ backgroundColor: 'rgba(196, 196, 196, 0.3 )', borderRadius: '10px' }}>
-            <div className="m-auto">
-              <img className="h-24 w-24 m-auto" src={uploadImg} alt=''/>
+    <Dashboard setTask={''} location={location}>
+      <div className="px-10 pt-10 pb-15 md:pb-30 lg:pb-30">
+        <h2 className="font-customRoboto text-inbev-primary-text text-2xl">
+          File Upload
+        </h2>
+        <div className="block md:flex lg:flex mt-10 md:mt-20 lg:mt-20 px-3 md:px-7 lg:px-7  md:space-x-14 lg:space-x-14 h-full">
+          <div className="w-full md:w-1/2 lg:w-1/2 rounded-md border-2 border-dashed bg-gray-200 border-inbev-main flex items-center justify-center self-stretch">
+            <div className="flex justify-center flex-col items-center">
+              <BsCloudUpload size="4rem" color="rgba(151, 27, 30, 0.5)" />
               <input type="file" name="file" id="file" class="inputfile font-normal mt-3" />
               <label className="font-customRoboto font-normal" for="file">Drag to upload or <span className="font-normal cursor-pointer" style={{ color: 'black' }}>browse</span></label>
             </div>
           </div>
-        </div>
-        <div className="h-full w-full md:w-1/2 lg:w-1/2 md:overflow-y-scroll lg:overflow-y-scroll">
-          <div className="my-8 mx-0 px-0 md:mt-20 lg:mt-20 md:mx-10 lg:mx-0 md:px-10 lg:px-10">
-            <p
-              className="mx-5 text-black-400 font-bold pb-5 font-customRoboto"
-              style={{ fontSize: "30px" }}
-            >
-              New Task Upload
-					</p>
-            <div className='mt-4 mx-5 px-0'>
-              <form>
-                <div class="pt-6 pb-8 mb-4 flex flex-col">
-                  <div class="mb-4">
-                    <label
-                      class="block text-black-400 text-base font-normal font-customRoboto mb-2"
-                      for="username"
-                    >
-                      Task Name
-									</label>
-                    <select
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-black-400"
-                      id="task-name"
-                      type="text"
-                    >
-                      <option className>
-                        Chiilers
-                    </option>
-                      <option className="py-2 px-3 text-black-400">
-                        Posters
-                    </option>
-                    </select>
-                  </div>
-                  <div class="mb-4">
-                    <label
-                      class="block text-black-400 text-base font-normal font-customRoboto mb-2"
-                      for="username"
-                    >
-                      Task Type
-									</label>
-                    <select
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-black-400"
-                      id="task-type"
-                      type="text"
-                    >
-                      <option className>
-                        Peru Team
-                    </option>
-                      <option className="py-2 px-3 text-black-400">
-                        Temi Team
-                    </option>
-                      <option className="py-2 px-3 text-black-400">
-                        Anu Team
-                    </option>
-                    </select>
-                  </div>
-                  <div class="mb-4">
-                    <label
-                      class="block text-black-400 text-base font-normal font-customRoboto mb-2"
-                      for="password"
-                    >
-                      Task start date
-									</label>
-                    <input
-                      class="shadow appearance-none border  rounded w-full py-2 px-3 text-black-400 mb-3"
-                      id="password"
-                      type="text"
-                      placeholder="May 27, 2020 | 9:30am"
-                    />
-                  </div>
-                  <div class="mb-4">
-                    <label
-                      class="block text-black-400 text-base font-normal font-customRoboto mb-2"
-                      for="password"
-                    >
-                      Task end date
-									</label>
-                    <input
-                      class="shadow appearance-none border  rounded w-full py-2 px-3 text-black-400 mb-3"
-                      id="password"
-                      type="password"
-                      placeholder="May 27, 2020 | 9:30am"
-                    />
-                  </div>
-                  <div class="mb-6">
-                    <label
-                      class="block text-black-400 text-base font-normal font-customRoboto mb-2"
-                      for="password"
-                    >
-                      Business Rule
-									</label>
-                    <input
-                      class="shadow appearance-none border  rounded w-full py-2 px-3 text-black-400 mb-3"
-                      id="password"
-                      type="password"
-                      placeholder=""
-                    />
-                  </div>
-                  <div className="block md:flex lg:flex md:justify-between lg:justify-between w-full">
-                    <button className="w-full md:w-1/2 lg:w-1/2 md:mr-3 lg:mr-3 my-5 py-3 rounded text-white text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#971B1E' }}>
-                      Upload Task
-                  </button>
-                    <button className="w-full md:w-1/2 lg:w-1/2 md:ml-3 lg:ml-3 my-5 py-3 rounded text-center text-base font-bold font-customRoboto" style={{ backgroundColor: '#FFFFFF', color: '#971B1E', border: '1px solid #000000' }}>
-                      Cancel
-                  </button>
-                  </div>
-                </div>
-              </form>
+          <div className=" w-full md:w-1/2 lg:w-1/2">
+            <h2 className="mt-8 md:mt-0 lg:mt-0 text-inbev-black font-customRoboto font-bold text-3xl">
+              New task Upload
+            </h2>
+            <div className="mt-10">
+              <InputField
+                label="Task Name"
+                value={newTaskData.taskName}
+                nameAttr="taskName"
+                changed={(val) =>
+                  setNewTaskData({ ...newTaskData, taskName: val })
+                }
+              />
+              <InputField
+                label="Task Start Date"
+                value={newTaskData.taskStartDate}
+                nameAttr="taskStartDate"
+                changed={(val) =>
+                  setNewTaskData({ ...newTaskData, taskStartDate: val })
+                }
+              />
+              <InputField
+                label="Task End Date"
+                value={newTaskData.taskEndDate}
+                nameAttr="taskEndDate"
+                changed={(val) =>
+                  setNewTaskData({ ...newTaskData, taskEndDate: val })
+                }
+              />
+              <InputField
+                label="Business Rule"
+                value={newTaskData.businessRule}
+                nameAttr="businessRule"
+                changed={(val) =>
+                  setNewTaskData({ ...newTaskData, businessRule: val })
+                }
+              />
+              <div className="block md:flex lg:flex md:space-x-5 lg:space-x-5 mt-4 md:mt-12 lg:mt-12">
+                <Button className='md:mt-0 lg:mt-0' buttonLabel="Upload Task" type="button" styleType="filled" />
+                <Button className='mt-5 md:mt-0 lg:mt-0' buttonLabel="Cancel" type="button" styleType="outline" />
+              </div>
             </div>
           </div>
         </div>
@@ -129,4 +75,4 @@ const AddTasks = ({ location }) => {
   );
 };
 
-export default AddTasks;
+export default NewTasks;
