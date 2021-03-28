@@ -15,7 +15,7 @@ const AddTasks = ({ location }) => {
             </div>
           </div>
         </div>
-        <div className="h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll">
+        <div className="h-full w-full md:w-1/2 lg:w-1/2 md:overflow-y-scroll lg:overflow-y-scroll">
           <div className="my-8 mx-0 px-0 md:mt-20 lg:mt-20 md:mx-10 lg:mx-0 md:px-10 lg:px-10">
             <p
               className="mx-5 text-black-400 font-bold pb-5 font-customRoboto"
@@ -23,7 +23,7 @@ const AddTasks = ({ location }) => {
             >
               New Task Upload
 					</p>
-            <div className='mt-4 mx-5 md:mt-16 px-0'>
+            <div className='mt-4 mx-5 px-0'>
               <form>
                 <div class="pt-6 pb-8 mb-4 flex flex-col">
                   <div class="mb-4">
