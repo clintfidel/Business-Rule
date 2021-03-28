@@ -28,7 +28,7 @@ const Tasks = ({ location }) => {
         <div className="px-5 pt-10 w-full h-full pb-16 bg-white rounded-md mt-6 overflow-x-scroll">
           <div className="block md:flex lg:flex md:space-x-8 lg:space-x-8 items-left md:items-center lg:items-center">
             <p className="text-xl font-customRoboto text-inbev-primary-text mr-20">
-              All Task <span className="opacity-40 ml-1 text-sm">390</span>
+              All Task <span className="opacity-40 ml-1 text-sm">{currentList.length}</span>
             </p>
             <div className="relative">
               <input
